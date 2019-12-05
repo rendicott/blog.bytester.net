@@ -2,6 +2,7 @@ version: 0.2
 
 phases:
   build:
+    base-directory: /tmp/working/bitester
     commands:
       - echo Build started on `date`
       - echo Building the Hugo site 
@@ -10,5 +11,6 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
+  base-directory: /tmp/working/bitester
   files:
     - ./public/*
