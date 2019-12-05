@@ -17,6 +17,6 @@ phases:
       - pwd
       - ls -al ./public
 artifacts:
-  base-directory: /tmp/working/bitester
+  base-directory: /tmp/working/bitester/public
   files:
-    - './public/*'
+    - '**/*'
