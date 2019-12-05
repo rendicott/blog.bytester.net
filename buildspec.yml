@@ -6,6 +6,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Hugo site 
+      - pwd
+      - ls -al
       - hugo -D 
   post_build:
     commands:
