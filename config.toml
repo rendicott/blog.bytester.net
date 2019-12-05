@@ -6,7 +6,7 @@ googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 footnotereturnlinkcontents = "↩"
-publishDir = "/tmp/working/bitester-static"
+#publishDir = "/tmp/working/bitester-static"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
