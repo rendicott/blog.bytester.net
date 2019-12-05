@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Hugo site 
+      - hugo -D 
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - ./public/*
