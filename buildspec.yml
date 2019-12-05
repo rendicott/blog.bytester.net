@@ -10,8 +10,12 @@ phases:
       - ls -al
       - hugo -D 
   post_build:
+    base-directory: /tmp/working/bitester
     commands:
       - echo Build completed on `date`
+      - ls -al
+      - pwd
+      - ls -al ./public
 artifacts:
   base-directory: /tmp/working/bitester
   files:
