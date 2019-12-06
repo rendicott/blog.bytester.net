@@ -4,18 +4,12 @@ phases:
   build:
     base-directory: /tmp/working/bitester
     commands:
-      - echo Build started on `date`
-      - echo Building the Hugo site 
-      - pwd
-      - ls -al
       - hugo -D 
-  post_build:
-    base-directory: /tmp/working/bitester
+  post-build:
     commands:
-      - echo Build completed on `date`
-      - ls -al
-      - pwd
-      - ls -al ./public
+      - aws s3 sync ./public s3://$OUTPUT_BUCKET
+# create an archive artifact
 artifacts:
+  name: bitester-blog_$(date +%Y-%m-%d) 
   files:
     - '**/*'
