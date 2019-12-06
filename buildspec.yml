@@ -5,7 +5,7 @@ phases:
     base-directory: /tmp/working/bitester
     commands:
       - hugo -D 
-  post-build:
+  post_build:
     commands:
       - aws s3 sync ./public s3://$OUTPUT_BUCKET
 # create an archive artifact
