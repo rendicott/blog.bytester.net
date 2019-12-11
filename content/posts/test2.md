@@ -7,7 +7,7 @@ tags:
 - testing
 - starting
 description: a starter post for testing purposes2
-slug: testing-is-good
+slug: testing-is-gooder
 ---
 testing2
 
