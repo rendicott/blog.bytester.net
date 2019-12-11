@@ -1,7 +1,7 @@
 ---
 title: "Test2"
 date: 2019-12-09
-draft: false
+draft: true
 categories: testing
 tags:
 - testing
