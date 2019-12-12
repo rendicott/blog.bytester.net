@@ -14,7 +14,7 @@ From there I just embarked on a simple set of goals to get a Github Webhook to t
 # Getting Started
 The first step was to get Hugo generating content in a container so that it could later be used as the dev/deploy environment. I was disappointed that all Hugo offered for Linux environments was linuxbrew `brew install hugo` setup which I felt was gross to run in a container so I just set it up to compile from source. Here's a cleaned up version of the `Dockerfile` for my local dev and deploy environment:
 
-```
+```dockerfile
 FROM ubuntu:18.04
 RUN apt-get update
 
@@ -119,7 +119,7 @@ This part was pretty straighforward and I didn't have to mess much with the Code
 ## CodeBuild
 This part took a while to get right as with any new CI/CD environment you have to do a lot of discovery to see where you are in the filesystem when you enter your container, whether or not you need full paths, what binaries and environment variables are available, etc. A lot of trial and error was required to get this very simple `buildspec.yml` created:
 
-```
+```yml
 version: 0.2
 
 phases:
@@ -142,7 +142,7 @@ What this will do is launch the container from ECR, run the `hugo -D` command an
 ### ECR Notes
 The ECR repo had to have permissions added to it so that CodeBuild could access the repository. Apparently CodeBuild does not use its own service role when attempting to access ECR. Below is the permissions on the ECR repo:
 
-```
+```json
 {
   "Version": "2008-10-17",
   "Statement": [
