@@ -2,7 +2,6 @@ baseurl = "http://blog.bytester.net/"
 languageCode = "en-us"
 title = "blog.bytester.net"
 theme = "hugo-xmin"
-enableGitInfo = true
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
