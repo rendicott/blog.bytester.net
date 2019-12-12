@@ -1,7 +1,6 @@
 FROM ubuntu:18.04
 RUN apt-get update
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get install wget git build-essential vim curl awscli -y
+RUN apt-get install wget git build-essential -y
 RUN mkdir -p /opt/source/working
 WORKDIR /opt/source
 RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
@@ -12,7 +11,8 @@ RUN git clone https://github.com/gohugoio/hugo.git
 WORKDIR /opt/source/hugo
 RUN go install --tags extended
 RUN mkdir -p /tmp/working
-WORKDIR /tmp/working/bitester
+RUN apt-get install vim curl -y
+WORKDIR /tmp/working/bitester-blog
 # install fixuid
 RUN USER=hugo && \
     GROUP=hugo && \
