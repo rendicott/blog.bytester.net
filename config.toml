@@ -1,11 +1,11 @@
-baseurl = "/"
+baseurl = "http://blog.bytester.net/"
 languageCode = "en-us"
-title = "A minimal Hugo website"
+title = "blog.bytester.net"
 theme = "hugo-xmin"
+enableGitInfo = True
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-#publishDir = "/tmp/working/bitester-static"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
@@ -32,5 +32,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/index.xml"
 
 [params]
-    description = "A website built through Hugo and blogdown."
+    description = "thoughts and experiences"
     footer = "&copy; Russell Endicott | [Github](https://github.com/rendicott)"
