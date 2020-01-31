@@ -12,7 +12,7 @@ WORKDIR /opt/source/hugo
 RUN go install --tags extended
 RUN mkdir -p /tmp/working
 RUN apt-get install vim curl -y
-WORKDIR /tmp/working/bitester-blog
+WORKDIR /tmp/working/blog.bytester.net
 # install fixuid
 RUN USER=hugo && \
     GROUP=hugo && \
