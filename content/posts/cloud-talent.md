@@ -48,18 +48,25 @@ To shelve the analogy, the corporate cloud is in a phase where everything is sti
 There are a few directions to go from here which all have their pros and cons.
 
 * Keep building custom solutions and just pay more people well. 
-  * Companies will have to figure out a comprehensive funding model to maintain central control. This would simply be a per-application fee to manage custom cloud configurations which would have to be around $10k/yr.  
 * Standardize the work and make IT boring again. 
-  * This will keep the per-application cost much lower but also stifle innovation. The hardest part will be finding cloud people who either aren't real cloud people or are cloud people who have been through hell and have the "thousand lambda stare".
+
+In the first casse companies will have to figure out a comprehensive funding model to maintain central control. This could simply be a per-application fee to manage custom cloud configurations which would have to be around $10k/yr.  However, it's a difficult conversation to go to an application team looking to host some Javascript and a lightweight PostgreSQL DB and tell them it will cost them $800/month for support for something that will likely never go down. But people often forget about all of the work that goes into even minor applications which can include:
+
+* EVM (aka, patching) - vulnerabilities must be patched frequently and if the central teams think the application teams will do this then they're just wrong. Nobody patches if things are working. This becomes especially tricky with serverless--especially with docker images. Can you imagine forcibly changing someone's Dockerfile from `FROM ubuntu:18.04` to `FROM ubuntu:20.04` and expect everything to work? These things are just hard and take smart people to solve--especially at scale. 
+* Audits - auditors are a fact of life, like termites and the common cold. They're just going to come and wreck you at the worst possible time. They'll come out of nowwhere one day and say something like "You are hereby ordered to make sure every Security Group in these three accounts has the 'all outbound traffic' rule removed". This is a serious technical challenge that requires very smart people to solve at scale and a deep knowledge of the behavior of hundreds of applications. It's gruelling work and it just flat out takes time--even for small applications.   
+* Cost Optimization - One of the beautiful things about cloud is an almost unlimited potential for cost savings. Take one person from your cloud team and task them with saving money at scale and they can come up with some mouth-watering numbers from doing seemingly simple things like shutdown schedules, instance right-sizing, RDS instance to Aurora migrations, EBS snapshot cleanup, etc. This sort of clutter piles up like Red Bull cans in a dorm room and it's just flat out work and time to fix at scale. 
+* Asset Management - This is like keeping a rolling census on metadata that isn't easily standardized from a developer's perspective. For example, "If my application stores sensitive data do I put a tag on it that says `Data Classification: High` or do I put `Data Classification: high`? Do I put `dev` or `development`?" For more on why this is important see my [ITSM and Cloud](../itsm-and-cloud) post. In any case, this can only really be done well by a central oversight team setting standards, writing governance automation, and regularly nagging people to put the right info down. 
+
+The second "standardization" approach will keep the per-application cost much lower but also stifle innovation. The hardest part will be finding cloud people who either aren't real cloud people or are cloud people who have been through hell and have the "thousand lambda stare".
 
 I believe we're in an era where we all need to be driving our applications to work in Honda Civics and Ferrari's should be expensive to drive. 
 
 
 ## Reference
 * [1] - Great Resignation (https://en.wikipedia.org/wiki/Great_Resignation)
-* [2] - Greybeard Definition (https://gist.github.com/lenards/3739917#:~:text=greybeard-,Greybeard,use%20a%20remotely%20contemporary%20computer.)
+* [2] - Greybeard  (https://gist.github.com/lenards/3739917#:~:text=greybeard-,Greybeard,use%20a%20remotely%20contemporary%20computer.)
 * [3] - S3 Data Breaches - (https://businessinsights.bitdefender.com/worst-amazon-breaches)
-* [4] - Cowboy Definition (https://en.wikipedia.org/wiki/Cowboy_coding)
+* [4] - Cowboy Coder (https://en.wikipedia.org/wiki/Cowboy_coding)
 * [5] - "Any Colour So Long as it's Black" - (http://oplaunch.com/blog/2015/04/30/the-truth-about-any-color-so-long-as-it-is-black/)
 * [6] - Cloud Solutions Architect Salary - (https://www.payscale.com/research/US/Job=Cloud_Solutions_Architect/Salary)
 

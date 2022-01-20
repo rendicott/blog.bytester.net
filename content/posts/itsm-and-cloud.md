@@ -60,7 +60,6 @@ Changes to software and infrastructure are necessary but they break things and u
 The spirit of all of these frameworks boils down to some very simple principles. Change control is implemented so that:
 * Changes can be reviewed *before* they happen and can be controlled in a reasonable manner
    * Example: year end change freeze so people don't bring down the network on Christmas day
-Hopefully this document has helped to convey the importance of maintaining links between physical and logical systems in order to facilitate business operations. 
    * Example: preventing changes to critical systems when it's important for another critical process to run smoothly such as quarter end financial close
 * Changes can be reviewed *after* they happen to determine when something caused an outage or regulatory failure
    * Example: your application broke without you changing anything so you want to go and see if some system that your application depends on was changed 
@@ -69,7 +68,7 @@ Hopefully this document has helped to convey the importance of maintaining links
 Let's look at some options for how we establish a change control system.
 
 ### How to Implement a Basic Change Control System
-In it's very basic form a change control system could be as simple as a spreadsheet that outlines the following:
+In it's very basic form a change control system _could_ be as simple as a spreadsheet that outlines the following:
 
 | Change Start Date | Change End Date | Change Description                                        | Affects (systems)                | Approver(s)                         |
 |-------------------|-----------------|-----------------------------------------------------------|----------------------------------|-------------------------------------|
