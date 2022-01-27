@@ -123,18 +123,72 @@ We want to have a fast track for standard applications and also be able to suppo
 |   App Category  | Monthly Fee | Number of Engineers |
 |-----------------|-------------|---------------------|
 | Standard Small  |   $1k       |       0.1           |
-| Standard Medium |   $5k       |        0.5          |
-| Standard Large  |   $10k      |        1            |
-| Custom Small    |   $12k      |       1.2           |
-| Custom Medium   |   $20k      |        2            |
-| Custom Large    |   $30k      |        3            |
+| Standard Medium |   $5k       |       0.2           |
+| Standard Large  |   $10k      |       0.5           |
+| Custom Small    |   $12k      |       0.8           |
+| Custom Medium   |   $20k      |        1            |
+| Custom Large    |   $30k      |        2            |
 
-However, let's look at a real world organization that's struggling and break down the numbers.
+However, let's look at a real world centralized cloud hosting organization that's struggling and break down the numbers.
 
 ![Org](/img/org.png)
 
+The above diagram describes a team that controls access to their cloud environments and the apps that go into them. They are severely understaffed for the number of applications in their portfolio. When requests come in for very simple changes (e.g., add a new load balancer so a site is internet facing) it can take up to 6 months to service the request. This is because larger, more important projects are taking up all of the resources on the team. This could be solved somewhat by better time management but it's really a simple case of being understaffed. The team needs to hire more engineers but the question for management is "how many more do we need?".
+
+Let's assume that middle management takes the advice of this article and does some math. They find out which of the applications in their portfolio fall into the T-Shirt categories and publish the findings as
+
+<sub>Assuming per engineer (FTE and contractor) average salary of 100k USD</sub>
+
+| App   Category            | Monthly Fee | Break Even Fee | Number of Engineers | Number of Applications | Required Engineers | App2Eng Ratio | Annual Cost | Annual Revenue |
+|---------------------------|-------------|----------------|---------------------|------------------------|--------------------|---------------|-------------|----------------|
+| Standard Small            | $1,000      | $833           | 0.1                 | 200                    | 20                 | 10            | $2,000,000  | $2,400,000     |
+| Standard Medium           | $2,000      | $1,667         | 0.2                 | 80                     | 16                 | 5             | $1,600,000  | $1,920,000     |
+| Standard Large            | $3,000      | $3,333         | 0.4                 | 15                     | 6                  | 2.5           | $600,000    | $540,000       |
+| Custom Small              | $6,000      | $6,667         | 0.8                 | 12                     | 9.6                | 1.25          | $960,000    | $864,000       |
+| Custom Medium             | $15,000     | $8,333         | 1                   | 8                      | 8                  | 1             | $800,000    | $1,440,000     |
+| Custom Large              | $20,000     | $13,333        | 1.6                 | 5                      | 8                  | 0.625         | $800,000    | $1,200,000     |
+|                           |             |                |                     |                        |                    |               |             |                |
+|                           |             |                | TOTAL               | 320                    | 67.6               | 1.875         | $6,760,000  | $8,364,000     |
+|                           |             |                |                     |                        |                    |               |             |                |
+
+When management gets together and looks at the size of the current organization and the requirements per the model they get excited. The headcount requirements match what's required almost exactly! Now all we have to do is get our billing sorted out and we can start bringing in revenue for this department. High fives all around. However, the grizzled ops manager raises their hand and bursts everyone's bubble by saying "Yeah, the only problem is that this organization is dysfunctional. It takes 6 months to get anything done and I have to chew on garbage all day because there's no consistency". Why is that? What are we doing wrong?
+
+One of the reasons that we've already covered is that all of the applications are in currently under the Custom category and it would be a large effort to standardize the existing portfolio. Maybe we'd have enough headcount if we'd started keeping apps in their lanes from day one but we'll have to agree that all net new must correctly fall into one of the product categories. This type of organizational transformation is a topic for another day so for now let's just pretend that all of our apps magically transformed, we'd be in good shape then right? Well, there's another aspect of this example team that we haven't covered yet that will threaten its success--yes, it's that elephant in the room--the Contractors. 
+
+## The "Give a Damn" Factor
+There's a concept that a lot of upper leadership fails to understand--How many people are there that actually give a damn about the applications they are supporting? When people don't care about what they're working on then everything else fails--the designs lack thought, the operations aren't stable, they're unmotivated and speed to market suffers. A lot of companies try to measure how much their employees give a damn by setting feeder pellet KPI's that most people ignore because they don't represent real life. KPI's may work reasonably well for simple tasks but we're talking about very complex systems being worked on by highly educated and seasoned professionals. 
+
+Just like developers working on a shared codebase, it's very difficult to transfer the train of thought for a new feature to another person at the end of a shift--once an engineer has a system loaded into their brain it makes the most sense to have that engineer own and finish the job. Therefore, one of the most important factors in an organization that manages complex things is a culture of ownership. Let us quickly define what we mean by ownership of a cloud based application:
+
+* Understand what the app does.
+* Understand who the stakeholders are. 
+* Understand the basic architecture is.
+* Understand how much downtime the app can handle and what its weaknesses are.
+* Understand how to make changes to the app infrastructure.
+* Understand how to monitor the performance of the application
+* Understand how much the app's infrastructure costs the stakeholders
+
+_Somebody_ has to know all of these things to adequately support the application! Our example team appears to have enough good people, they're highly paid and they didn't get to this point in life without caring about technology. So why then are good people failing to take ownership? Let's examine some possible factors: 
+
+* They are contractors who don't have clear requirements and are paid to execute, not own. 
+* The organization is all toil and has no moon-shots or heroic teams working to someday fix the problems in the work.
+* They are understaffed, overworked, jaded and burnt out
+* Their customers don't give a damn so why should they?
+
+First of all, contractors are good people. They are often highly technical, amiable, and hard working. Of course, this varies based on their rates but generally holds true. The biggest problem is that no matter how expensive they are they will never be able to provide the level of ownership that is required to support a complex application. It's just a fundamental rule embedded in the nature of the relationship. They are paid to execute tasks and even if they are given the task of ownership they will always fall short of what is needed for an organization because the nature of the relationship is temporary. Everyone they interact with inside the organization knows that there is an egg timer ticking and they will fail to create lasting relationships. Even if contractor tenureship is longer than the full time employees due to attrition it's still a scarlet letter stamped on them in the company directory. It's just human nature. 
+
+If the organization is all toil and there are no "moon-shots" it means that the people on the team see no hope for the future. Even if all of their work is going well then human psychology will still make them only see the annoying parts of their job. If they know that there is nobody working on making "the workplace of tomorrow" then all hope is lost. People _need_ to be able to think about an unsolvable problem in their daily life and think to themselves "After `person` builds `thing` maybe this will get better, I'll just keep toiling for now because I know there is some hope". We'll have to factor this into our design of a highly functional team.  
+
+The overworked problem should hopefully work itself out once the team is staffed appropriately per our model. See above reference to moon-shot team to give a temporary morale boost in the mean time. 
+
+Now what if the customers we're serving don't seem to care whether or not the designs are good and the infrastructure is stable? This is actually a very common problem in large organizations where apps have been moved around and inherited as departments restructure and employees leave. It's demoralizing to work for hours on a design or a fix and proudly present your findings to a room full of crickets. This is where management and culture has to step in and save the day. Jeff Bezos once said in a shareholder letter that "High standards are contagious". Observations of real world teams indicate that as long as there is one person--be it a customer, manager, or peer that seems to care about the quality of your work then that is enough to replace the lack of care from a customer. This will come in time as the entire organization's level of quality and pride go up. 
+
+So, could we somehow incorporate these factors into our team planning table? Why yes, we could...
+
+
+
 ## Conclusion
-The bottom line is that cloud infrastructure is just damned complicated these days. It's very difficult to divorce the application from the infrastructure and thus the engineer to application ratio has gotten higher and higher as the list of cloud features has grown. 
+The bottom line is that cloud infrastructure is just damned complicated these days. It's very difficult to divorce the application from the infrastructure and thus the application to engineer ratio has gotten lower and lower as the list of cloud features has grown. 
 
 We have entered an era in enterprise cloud where most of us need to be driving our applications to work in Honda Civics and Ferrari's should be expensive to drive. In other words, standardized work should be the easy way to get applications hosted with few barriers. Custom architecture should be available albeit expensive. Either way, the most important aspect is having a rock solid funding model for both approaches which is likely higher than most people expect. 
 
