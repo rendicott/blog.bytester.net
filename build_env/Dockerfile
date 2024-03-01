@@ -1,10 +1,10 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 RUN apt-get update
 RUN apt-get install wget git build-essential -y
 RUN mkdir -p /opt/source/working
 WORKDIR /opt/source
-RUN wget https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin
 ENV GOBIN=/usr/local/bin/
 RUN git clone https://github.com/gohugoio/hugo.git
