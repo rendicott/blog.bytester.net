@@ -12,6 +12,8 @@ WORKDIR /opt/source/hugo
 RUN go install --tags extended
 RUN mkdir -p /tmp/working
 RUN apt-get install vim curl -y
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+RUN apt-get install awscli -y
 WORKDIR /tmp/working/blog.bytester.net
 # install fixuid
 RUN USER=hugo && \
