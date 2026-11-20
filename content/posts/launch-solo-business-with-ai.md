@@ -1,3 +1,8 @@
+---
+title: "Can you launch a solo business with AI?"
+date: 2026-11-20
+---
+
 # Can you launch a solo business with AI?
 
 In November 2025, two things happened: Opus 4.5 and OpenClaw. The former was the first model that shook my skepticism of the whole AI thing, and the second was giving the model shell and cron jobs.
