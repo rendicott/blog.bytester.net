@@ -3,8 +3,6 @@ title: "Can you launch a solo business with AI?"
 date: 2026-11-20
 ---
 
-# Can you launch a solo business with AI?
-
 In November 2025, two things happened: Opus 4.5 and OpenClaw. The former was the first model that shook my skepticism of the whole AI thing, and the second was giving the model shell and cron jobs.
 
 Ever since, people have been saying you could run a business with just an agent—and I can definitely see how people could make that jump, but I figured it was more complicated than that. This is my journey in finding out.
@@ -48,7 +46,7 @@ So now the business can pay its own credit card, and the only thing I have to fi
 It would be responsible to make this side project at least cover its own expenses, right? For that, we need to have a way to ~take~ accept people's money. There's a 99% chance that nobody will give us any money, but this business experiment would not be complete without it. The agents are in full panic mode that Stripe will demand an IRS letter 147C that proves the EIN is mapped to the business address. They make me fill out a form IRS 8822-B and send it by snail mail and set a 6-week cron timer to follow up before letting Stripe know we exist. I said "screw it" and opened the Stripe account after about 2 weeks of waiting. Turns out there are plenty of other verification methods that don't require a 147C. I still have no idea if the IRS ever updated the EIN address. I imagine my 8822-B to still be sitting in a mountain of mail in Kansas City somewhere.
 
 ## The Billing Model
-This one took a lot of my brainpower, and no agent could help. I know as a human nerd that the chances of someone even trying the service, even if it's free, are slim to none. I don't want to pollute the world with another monthly subscription. I quite like the LLM token APIs—how you fund a balance and it's up to you how you spend it. I settled on a model like that where it's mostly free for personal and light business use, but if you want to get super organized or push excessive volume through the system, it will cost $5-10/month. So even at the extreme end, it's not going to hurt anyone. If by some miracle, 100 people fund a topic or pay for some extra Reach packs, it should cover the monthly business expenses.
+This one took a lot of my brainpower, and no agent could help. I know as a human nerd that the chances of someone even trying the service, even if it's free, are slim to none. I don't want to pollute the world with another monthly subscription. I quite like the LLM token APIs—how you fund a balance and it's up to you how you spend it. I settled on a model like that where it's mostly free for personal and light business use, but if you want to get super organized or push excessive volume through the system,  $5-10 will cover you for a few months. So even at the extreme end, it's not going to hurt anyone. If by some miracle, 100 people fund a topic or pay for some extra Reach packs, it should cover the monthly business expenses.
 
 Once I knew my model, I directed my agents to implement across all the code surfaces and then we finished setting up Stripe.
 
