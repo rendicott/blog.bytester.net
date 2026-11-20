@@ -69,3 +69,5 @@ I learned a lot about starting a business, and there were many "aha" moments alo
 As far as answering the question of "Can you launch a solo business with AI?" I suppose the answer is "Yes," but there was a lot of "real-world" stuff and things that could not be done via API. Even though the agents wrote the code, the whole thing was a mountain of work and brainpower. Not for the faint of heart. I was prompting in the elevator, calling on lunch breaks, going to the post office on Saturday morning, buying used iPhones on eBay, fighting with passkey setups for the 23 accounts I had to open, tracking passwords, recovering passwords, clicking in portals that couldn't be agent-driven—the list goes on.
 
 In the end, though, yeah, you can launch a business, it was fun, try it!
+
+![Orb mobile app](/img/orb-mobile.png)
